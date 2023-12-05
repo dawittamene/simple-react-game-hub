@@ -13,6 +13,7 @@ import SortSelecteor from "./components/SortSelecteor";
 export interface GameQuery{
   genre:Genre | null;
   platform:platform | null;
+  sortOrder:string
 }
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       <GridItem area="main">
         <HStack spacing={5} paddingLeft={2} marginBottom={5}>
           <PlatformSelector selectedplatform={gamequery.platform} onSelectPlatform={(platform)=>setGameQuery({...gamequery,platform})}/>
-        <SortSelecteor/>
+        <SortSelecteor sortOrder={gamequery.sortOrder} onSelectedOrder={(sortOrder)=> setGameQuery({...gamequery,sortOrder})}/>
         </HStack>
         
 
